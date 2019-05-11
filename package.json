@@ -1,0 +1,85 @@
+{
+  "name": "use-leaflet",
+  "version": "0.1.0",
+  "description": "useLeaflet hook for react-leaflet",
+  "license": "MIT",
+  "repository": "vadzim/use-leaflet",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Vadzim Zieńka",
+    "email": "v@vadzim.info",
+    "url": "https://github.com/vadzim"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "test": "jest",
+    "coverage": "npm test -- --coverage --collectCoverageFrom=src/**/*.js",
+    "lint": "eslint .",
+    "flow": "flow check",
+    "flowinstall": "flow-typed install --ignoreDeps=dev",
+    "docs": "documentation readme src --section=API",
+    "postdocs": "git add README.md",
+    "clean": "rimraf dist",
+    "flowbuild": "flow-copy-source src dist",
+    "prebuild": "npm run docs && npm run clean && npm run flowbuild",
+    "build": "babel src -d dist",
+    "preversion": "npm run lint && npm test && npm run build",
+    "version": "standard-changelog && git add CHANGELOG.md",
+    "postpublish": "git push origin master --follow-tags",
+    "codecov": "codecov --token=$CODECOV_TOKEN"
+  },
+  "lint-changed": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "keywords": [
+    "useLeaflet",
+    "react",
+    "hook",
+    "hooks",
+    "leaflet",
+    "react-leaflet"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17.0.0",
+    "react-leaflet": "^2.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
+    "codecov": "^3.3.0",
+    "documentation": "^10.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-flowtype": "^3.6.1",
+    "eslint-plugin-flowtype-errors": "^4.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "flow-bin": "^0.98.0",
+    "flow-copy-source": "^2.0.4",
+    "jest": "^24.7.1",
+    "leaflet": "^1.4.0",
+    "lint-changed": "0.0.0-development",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hooks-testing-library": "^0.5.0",
+    "react-leaflet": "^2.2.1",
+    "rimraf": "^2.6.3",
+    "standard-changelog": "^2.0.7"
+  }
+}

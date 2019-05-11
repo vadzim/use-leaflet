@@ -1,0 +1,39 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended",
+    "plugin:prettier/recommended",
+    "prettier/flowtype",
+    "plugin:react/recommended",
+  ],
+  "plugins": [
+    "flowtype",
+    "flowtype-errors",
+    "react-hooks",
+  ],
+  "env": {
+    "jest": true,
+  },
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "flowtype-errors/show-errors": "error",
+    "no-restricted-syntax": [
+      "error",
+      "WithStatement",
+      "LabeledStatement",
+      "ForInStatement",
+    ],
+    "no-await-in-loop": "off",
+    "no-return-await": "off",
+    "import/no-default-export": "error",
+    "import/prefer-default-export": "off",
+    "func-names": "off",
+  }
+}
