@@ -26,7 +26,7 @@
     "flowbuild": "flow-copy-source src dist",
     "prebuild": "npm run docs && npm run clean && npm run flowbuild",
     "build": "babel src -d dist",
-    "preversion": "npm run lint && npm test && npm run build",
+    "preversion": "npm run flowinstall && npm run lint && npm test && npm run build",
     "version": "standard-changelog && git add CHANGELOG.md",
     "postpublish": "git push origin master --follow-tags",
     "codecov": "codecov --token=$CODECOV_TOKEN"
@@ -47,7 +47,8 @@
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.0",
-    "react-leaflet": "^2.2.1"
+    "react-leaflet": "^2.2.1",
+    "leaflet": "^1.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -71,6 +72,7 @@
     "eslint-plugin-react-hooks": "^1.6.0",
     "flow-bin": "^0.98.0",
     "flow-copy-source": "^2.0.4",
+    "flow-typed": "^2.5.1",
     "jest": "^24.7.1",
     "leaflet": "^1.4.0",
     "lint-changed": "0.0.0-development",

@@ -1,6 +1,6 @@
 // @flow
 import { useState, useCallback, useEffect } from "react"
-import { useLeaflet } from "./use-leaflet"
+import { useLeafletMap } from "./use-leaflet-map"
 
 const getMapCenter = map => {
 	const { lat, lng } = map.getCenter()
@@ -13,12 +13,14 @@ const getMapCenter = map => {
  */
 
 export const useLeafletCenter = (): [number, number] => {
-	const { map } = useLeaflet()
+	const map = useLeafletMap()
 	const [center, setCenterState] = useState(() => map && getMapCenter(map))
 	const onLeafletMove = useCallback(() => setCenterState(map && getMapCenter(map)), [setCenterState, map])
 	useEffect(() => {
 		if (map) map.on("moveend", onLeafletMove)
-		return () => map && map.off("moveend", onLeafletMove)
+		return () => {
+			if (map) map.off("moveend", onLeafletMove)
+		}
 	}, [map, onLeafletMove])
 	return center || [0, 0]
 }

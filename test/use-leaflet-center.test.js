@@ -9,7 +9,7 @@ declare var describe: Function
 declare var it: Function
 declare var expect: Function
 
-describe("useLeaflet", () => {
+describe("useLeafletCenter", () => {
 	let center
 
 	const UseLeafletCenter = () => {

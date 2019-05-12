@@ -1,6 +1,6 @@
 // @flow
 import { useState, useCallback, useEffect } from "react"
-import { useLeaflet } from "./use-leaflet"
+import { useLeafletMap } from "./use-leaflet-map"
 
 const getMapBounds = map => {
 	const bounds = map.getBounds()
@@ -13,12 +13,14 @@ const getMapBounds = map => {
  */
 
 export const useLeafletBounds = (): [[number, number], [number, number]] => {
-	const { map } = useLeaflet()
+	const map = useLeafletMap()
 	const [bounds, setBoundsState] = useState(() => map && getMapBounds(map))
 	const onLeafletMove = useCallback(() => setBoundsState(map && getMapBounds(map)), [setBoundsState, map])
 	useEffect(() => {
 		if (map) map.on("moveend", onLeafletMove)
-		return () => map && map.off("moveend", onLeafletMove)
+		return () => {
+			if (map) map.off("moveend", onLeafletMove)
+		}
 	}, [map, onLeafletMove])
 	return bounds || [[Infinity, Infinity], [-Infinity, -Infinity]]
 }

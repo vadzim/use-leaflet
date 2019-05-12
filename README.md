@@ -20,9 +20,9 @@ The discussion is here <https://github.com/PaulLeCam/react-leaflet/pull/571>.
 
 -   [useLeafletBounds](#useleafletbounds)
 -   [useLeafletCenter](#useleafletcenter)
+-   [Map](#map)
+-   [useLeafletMap](#useleafletmap)
 -   [useLeafletZoom](#useleafletzoom)
--   [LeafletContext](#leafletcontext)
--   [useLeaflet](#useleaflet)
 
 ### useLeafletBounds
 
@@ -58,6 +58,39 @@ const MyComponent = () => {
 }
 ```
 
+### Map
+
+-   **See: leaflet [Map](https://leafletjs.com/reference.html#map) type.**
+
+### useLeafletMap
+
+React hook for getting current leaflet [map](https://leafletjs.com/reference.html#map). Returns the same value as the `map` member of the `leaflet` prop when using [withLeaflet](https://react-leaflet.js.org/docs/en/context.html) HOC from react-lealfet [module](https://www.npmjs.com/package/react-leaflet).
+
+Returns **([Map](#map) | void)** leaflet map.
+
+### 
+
+Usage:
+
+```javascript
+import React from "react"
+import { Map } from "react-leaflet"
+import { useLeafletMap } from "use-leaflet-context"
+
+const MyLeafletComponent = (props) => {
+  const map = useLeafletMap()
+  ...
+}
+
+const App = () => (
+  <Map>
+    <MyLeafletComponent />
+  </Map>
+)
+```
+
+Keep in mind, that `useLeafletMap` hook will work only in components which are used within [Map](https://react-leaflet.js.org/docs/en/components.html#map) component, the same as `withLeaflet` HOC from `react-leaflet`.
+
 ### useLeafletZoom
 
 React hook for getting current zoom of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
@@ -74,36 +107,3 @@ const MyLayer = () => {
   return zoom > 10 ? (<GeoJSON ... />) : (<GridLayer ... />)
 }
 ```
-
-### LeafletContext
-
--   **See: [LeafletContext](https://react-leaflet.js.org/docs/en/context.html) type.**
-
-### useLeaflet
-
-React hook for getting react-leaflet [data](https://react-leaflet.js.org/docs/en/context.html). Returns the same value as [withLeaflet](https://react-leaflet.js.org/docs/en/context.html) HOC from the react-lealfet [module](https://www.npmjs.com/package/react-leaflet).
-
-Returns **[LeafletContext](#leafletcontext)** leaflet context.
-
-### 
-
-Usage:
-
-```javascript
-import React from "react"
-import { Map } from "react-leaflet"
-import { useLeaflet } from "use-leaflet"
-
-const MyLeafletComponent = (props) => {
-  const { map } = useLeaflet()
-  ...
-}
-
-const App = () => (
-  <Map>
-    <MyLeafletComponent />
-  </Map>
-)
-```
-
-Keep in mind, that `useLeaflet` hook will work only in components which are used within [Map](https://react-leaflet.js.org/docs/en/components.html#map) component, the same as `withLeaflet` HOC from `react-leaflet`.

@@ -1,20 +1,18 @@
 // @flow
 
-import React, { useEffect } from "react"
+import React from "react"
 import { renderIntoDocument, act } from "react-dom/test-utils"
 import { Map } from "react-leaflet"
-import { useLeaflet } from "../src/use-leaflet"
+import { useLeafletContext } from "../src/use-leaflet-context"
 
 declare var test: Function
 declare var expect: Function
 
-test("useLeaflet", () => {
+test("useLeafletContext", () => {
 	let mapRef
 	const UseLeaflet = () => {
-		const { map } = useLeaflet()
-		useEffect(() => {
-			mapRef = map
-		})
+		const { map } = useLeafletContext()
+		mapRef = map
 		return <></>
 	}
 	const map = renderIntoDocument(
