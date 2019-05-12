@@ -1,6 +1,6 @@
 // @flow
 import type { Map } from "leaflet"
-import { useLeafletContext } from "./use-leaflet-context"
+import { useLeaflet } from "react-leaflet"
 
 /**
  * @external Map
@@ -11,7 +11,7 @@ import { useLeafletContext } from "./use-leaflet-context"
  * React hook for getting current leaflet [map](https://leafletjs.com/reference.html#map). Returns the same value as the `map` member of the `leaflet` prop when using [withLeaflet](https://react-leaflet.js.org/docs/en/context.html) HOC from react-lealfet [module](https://www.npmjs.com/package/react-leaflet).
  * @returns leaflet map.
  */
-export const useLeafletMap = (): Map | void => useLeafletContext().map
+export const useLeafletMap = (): Map | void => useLeaflet().map
 
 /**
  * Usage:
