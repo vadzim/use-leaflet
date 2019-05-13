@@ -9,6 +9,14 @@ const getMapCenter = map => {
 
 /**
  * React hook for getting current center of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+ *
+ * ```javascript
+ * const MyComponent = () => {
+ *   const [lat, lng] = useLeafletCenter()
+ *   return ...
+ * }
+ * ```
+ *
  * @returns center.
  */
 
@@ -24,14 +32,3 @@ export const useLeafletCenter = (): [number, number] => {
 	}, [map, onLeafletMove])
 	return center || [0, 0]
 }
-
-/**
- * Example:
- *
- * ```javascript
- * const MyComponent = () => {
- *   const [lat, lng] = useLeafletCenter()
- *   return ...
- * }
- * ```
- */

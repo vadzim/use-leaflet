@@ -20,7 +20,7 @@
     "lint": "eslint .",
     "flow": "flow check",
     "flowinstall": "flow-typed install --ignoreDeps=dev",
-    "docs": "documentation readme src --section=API",
+    "docs": "documentation --config documentation.yml readme src --section=API",
     "postdocs": "git add README.md",
     "clean": "rimraf dist",
     "flowbuild": "flow-copy-source src dist",

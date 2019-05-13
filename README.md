@@ -12,38 +12,28 @@ Some hooks for using with [react-leaflet](https://www.npmjs.com/package/react-le
 
 #### Table of Contents
 
--   [useLeafletBounds](#useleafletbounds)
--   [useLeafletCenter](#useleafletcenter)
--   [Map](#map)
--   [useLeafletMap](#useleafletmap)
 -   [useLeafletZoom](#useleafletzoom)
+-   [useLeafletCenter](#useleafletcenter)
+-   [useLeafletBounds](#useleafletbounds)
+-   [useLeafletMap](#useleafletmap)
+-   [Map](#map)
 
-### useLeafletBounds
+### useLeafletZoom
 
-React hook for getting current bounds of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
-
-Returns **\[\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)], \[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]]** bounds.
-
-### 
-
-Example:
+React hook for getting current zoom of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
 
 ```javascript
-const MyComponent = () => {
-  const [[south, west], [north, east]] = useLeafletBounds()
-  return ...
+const MyLayer = () => {
+  const zoom = useLeafletZoom()
+  return zoom > 10 ? (<GeoJSON ... />) : (<GridLayer ... />)
 }
 ```
+
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** zoom.
 
 ### useLeafletCenter
 
 React hook for getting current center of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
-
-Returns **\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]** center.
-
-### 
-
-Example:
 
 ```javascript
 const MyComponent = () => {
@@ -52,17 +42,24 @@ const MyComponent = () => {
 }
 ```
 
-### Map
+Returns **\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]** center.
 
--   **See: leaflet [Map](https://leafletjs.com/reference.html#map) type.**
+### useLeafletBounds
+
+React hook for getting current bounds of visible area of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+
+```javascript
+const MyComponent = () => {
+  const [[south, west], [north, east]] = useLeafletBounds()
+  return ...
+}
+```
+
+Returns **\[\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)], \[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]]** bounds of visible area.
 
 ### useLeafletMap
 
 React hook for getting current leaflet [map](https://leafletjs.com/reference.html#map). Returns the same value as the `map` member of the `leaflet` prop when using [withLeaflet](https://react-leaflet.js.org/docs/en/context.html) HOC from react-lealfet [module](https://www.npmjs.com/package/react-leaflet).
-
-Returns **([Map](#map) | void)** leaflet map.
-
-### 
 
 Usage:
 
@@ -85,19 +82,8 @@ const App = () => (
 
 Keep in mind, that `useLeafletMap` hook will work only in components which are used within [Map](https://react-leaflet.js.org/docs/en/components.html#map) component, the same as `withLeaflet` HOC from `react-leaflet`.
 
-### useLeafletZoom
+Returns **([Map](#map) | void)** leaflet map.
 
-React hook for getting current zoom of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+### Map
 
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** zoom.
-
-### 
-
-Example:
-
-```javascript
-const MyLayer = () => {
-  const zoom = useLeafletZoom()
-  return zoom > 10 ? (<GeoJSON ... />) : (<GridLayer ... />)
-}
-```
+-   **See: leaflet [Map](https://leafletjs.com/reference.html#map) type.**

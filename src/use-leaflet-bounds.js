@@ -8,8 +8,16 @@ const getMapBounds = map => {
 }
 
 /**
- * React hook for getting current bounds of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
- * @returns bounds.
+ * React hook for getting current bounds of visible area of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+ *
+ * ```javascript
+ * const MyComponent = () => {
+ *   const [[south, west], [north, east]] = useLeafletBounds()
+ *   return ...
+ * }
+ * ```
+ *
+ * @returns bounds of visible area.
  */
 
 export const useLeafletBounds = (): [[number, number], [number, number]] => {
@@ -24,14 +32,3 @@ export const useLeafletBounds = (): [[number, number], [number, number]] => {
 	}, [map, onLeafletMove])
 	return bounds || [[Infinity, Infinity], [-Infinity, -Infinity]]
 }
-
-/**
- * Example:
- *
- * ```javascript
- * const MyComponent = () => {
- *   const [[south, west], [north, east]] = useLeafletBounds()
- *   return ...
- * }
- * ```
- */

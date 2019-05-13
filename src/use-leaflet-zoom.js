@@ -5,6 +5,14 @@ import { useLeafletMap } from "./use-leaflet-map"
 
 /**
  * React hook for getting current zoom of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+ *
+ * ```javascript
+ * const MyLayer = () => {
+ *   const zoom = useLeafletZoom()
+ *   return zoom > 10 ? (<GeoJSON ... />) : (<GridLayer ... />)
+ * }
+ * ```
+ *
  * @returns zoom.
  */
 
@@ -20,14 +28,3 @@ export const useLeafletZoom = (): number => {
 	}, [map, onLeafletZoom])
 	return zoom || 0
 }
-
-/**
- * Example:
- *
- * ```javascript
- * const MyLayer = () => {
- *   const zoom = useLeafletZoom()
- *   return zoom > 10 ? (<GeoJSON ... />) : (<GridLayer ... />)
- * }
- * ```
- */
