@@ -41,6 +41,7 @@
     "react",
     "hook",
     "hooks",
+    "use",
     "leaflet",
     "react-leaflet"
   ],
