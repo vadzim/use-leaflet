@@ -13,7 +13,7 @@ import { useLeafletMap } from "./use-leaflet-map"
  * }
  * ```
  *
- * @returns zoom.
+ * @returns current zoom.
  */
 
 export const useLeafletZoom = (): number => {

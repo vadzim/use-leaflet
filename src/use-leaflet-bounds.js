@@ -17,7 +17,7 @@ const getMapBounds = map => {
  * }
  * ```
  *
- * @returns bounds of visible area.
+ * @returns [[south, west], [north, east]] for visible area.
  */
 
 export const useLeafletBounds = (): [[number, number], [number, number]] => {

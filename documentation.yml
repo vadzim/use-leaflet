@@ -1,5 +1,5 @@
 toc:
   - useLeafletZoom
+  - useLeafletMap
   - useLeafletCenter
   - useLeafletBounds
-  - useLeafletMap

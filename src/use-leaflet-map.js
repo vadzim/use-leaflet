@@ -14,7 +14,11 @@ import { useLeaflet } from "react-leaflet"
  *
  * const MyLeafletComponent = (props) => {
  *   const map = useLeafletMap()
- *   ...
+ *   return (
+ *	     <... onClick={() => map.fitBounds(turf.bbox(props.activeShape))}>
+ *        ...
+ *     </...>
+ *    )
  * }
  *
  * const App = () => (
@@ -26,7 +30,7 @@ import { useLeaflet } from "react-leaflet"
  *
  * Keep in mind, that `useLeafletMap` hook will work only in components which are used within [Map](https://react-leaflet.js.org/docs/en/components.html#map) component, the same as `withLeaflet` HOC from `react-leaflet`.
  *
- * @returns leaflet map.
+ * @returns current leaflet map.
  */
 
 export const useLeafletMap = (): Map | void => useLeaflet().map

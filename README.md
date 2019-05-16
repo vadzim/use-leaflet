@@ -13,9 +13,9 @@ Some hooks for using with [react-leaflet](https://www.npmjs.com/package/react-le
 #### Table of Contents
 
 -   [useLeafletZoom](#useleafletzoom)
+-   [useLeafletMap](#useleafletmap)
 -   [useLeafletCenter](#useleafletcenter)
 -   [useLeafletBounds](#useleafletbounds)
--   [useLeafletMap](#useleafletmap)
 -   [Map](#map)
 
 ### useLeafletZoom
@@ -29,33 +29,7 @@ const MyLayer = () => {
 }
 ```
 
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** zoom.
-
-### useLeafletCenter
-
-React hook for getting current center of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
-
-```javascript
-const MyComponent = () => {
-  const [lat, lng] = useLeafletCenter()
-  return ...
-}
-```
-
-Returns **\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]** center.
-
-### useLeafletBounds
-
-React hook for getting current bounds of visible area of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
-
-```javascript
-const MyComponent = () => {
-  const [[south, west], [north, east]] = useLeafletBounds()
-  return ...
-}
-```
-
-Returns **\[\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)], \[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]]** bounds of visible area.
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** current zoom.
 
 ### useLeafletMap
 
@@ -70,7 +44,11 @@ import { useLeafletMap } from "use-leaflet-context"
 
 const MyLeafletComponent = (props) => {
   const map = useLeafletMap()
-  ...
+  return (
+     <... onClick={() => map.fitBounds(turf.bbox(props.activeShape))}>
+       ...
+    </...>
+   )
 }
 
 const App = () => (
@@ -82,7 +60,33 @@ const App = () => (
 
 Keep in mind, that `useLeafletMap` hook will work only in components which are used within [Map](https://react-leaflet.js.org/docs/en/components.html#map) component, the same as `withLeaflet` HOC from `react-leaflet`.
 
-Returns **([Map](#map) | void)** leaflet map.
+Returns **([Map](#map) | void)** current leaflet map.
+
+### useLeafletCenter
+
+React hook for getting current center of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+
+```javascript
+const MyComponent = () => {
+  const [lat, lng] = useLeafletCenter()
+  return ...
+}
+```
+
+Returns **\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]** [lat, lng] of the map center.
+
+### useLeafletBounds
+
+React hook for getting current bounds of visible area of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+
+```javascript
+const MyComponent = () => {
+  const [[south, west], [north, east]] = useLeafletBounds()
+  return ...
+}
+```
+
+Returns **\[\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)], \[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]]** \[[south, west], [north, east]] for visible area.
 
 ### Map
 

@@ -17,7 +17,7 @@ const getMapCenter = map => {
  * }
  * ```
  *
- * @returns center.
+ * @returns [lat, lng] of the map center.
  */
 
 export const useLeafletCenter = (): [number, number] => {
