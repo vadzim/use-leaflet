@@ -1,11 +1,5 @@
 // @flow
-import { useState, useCallback, useEffect } from "react"
-import { useLeafletMap } from "./use-leaflet-map"
-
-const getMapBounds = map => {
-	const bounds = map.getBounds()
-	return [[bounds.getSouth(), bounds.getWest()], [bounds.getNorth(), bounds.getEast()]]
-}
+import { useLeafletData } from "./on-leaflet-event"
 
 /**
  * React hook for getting current bounds of visible area of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
@@ -20,15 +14,10 @@ const getMapBounds = map => {
  * @returns [[south, west], [north, east]] for visible area.
  */
 
-export const useLeafletBounds = (): [[number, number], [number, number]] => {
-	const map = useLeafletMap()
-	const [bounds, setBoundsState] = useState(() => map && getMapBounds(map))
-	const onLeafletMove = useCallback(() => setBoundsState(map && getMapBounds(map)), [setBoundsState, map])
-	useEffect(() => {
-		if (map) map.on("moveend", onLeafletMove)
-		return () => {
-			if (map) map.off("moveend", onLeafletMove)
-		}
-	}, [map, onLeafletMove])
-	return bounds || [[Infinity, Infinity], [-Infinity, -Infinity]]
+export const useLeafletBounds = (): [[number, number], [number, number]] => useLeafletData(getMapBounds, "moveend")
+
+const getMapBounds = map => {
+	if (!map) return [[Infinity, Infinity], [-Infinity, -Infinity]]
+	const bounds = map.getBounds()
+	return [[bounds.getSouth(), bounds.getWest()], [bounds.getNorth(), bounds.getEast()]]
 }
