@@ -3,7 +3,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Map } from "react-leaflet"
-import { useLeafletCenter } from "../src/use-leaflet-center"
+import { useLeafletCenter } from "../src/useLeafletCenter"
 
 declare var describe: Function
 declare var it: Function

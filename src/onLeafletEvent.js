@@ -1,7 +1,7 @@
 // @flow
 import type { Map } from "leaflet"
 import { useState, useEffect } from "react"
-import { useLeafletMap } from "./use-leaflet-map"
+import { useLeafletMap } from "./useLeafletMap"
 
 export const useLeafletData = <T>(getLeafletData: (map: Map | void) => T, event: string): T => {
 	const map: Map | void = useLeafletMap()

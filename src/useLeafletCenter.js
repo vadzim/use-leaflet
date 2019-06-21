@@ -1,5 +1,5 @@
 // @flow
-import { useLeafletData } from "./on-leaflet-event"
+import { useLeafletData } from "./onLeafletEvent"
 
 /**
  * React hook for getting current center of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
