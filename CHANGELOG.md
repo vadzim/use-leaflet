@@ -1,3 +1,7 @@
+## [1.4.4](https://github.com/vadzim/use-leaflet/compare/v1.4.3...v1.4.4) (2019-06-21)
+
+
+
 ## [1.4.3](https://github.com/vadzim/use-leaflet/compare/v1.4.2...v1.4.3) (2019-05-17)
 
 
