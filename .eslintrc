@@ -36,6 +36,8 @@
     "import/prefer-default-export": "off",
     "func-names": "off",
     "no-void": "off",
+    "no-plusplus": "off",
+    "require-yield": "off",
     "no-use-before-define": "off",
   }
 }
