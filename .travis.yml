@@ -8,4 +8,4 @@ script:
 cache:
   - npm ci
 after_success:
-  - npm run codecov
+  - npm run sendcodecov

@@ -29,7 +29,7 @@
     "preversion": "npm run flowinstall && npm run lint && npm test && npm run build",
     "version": "standard-changelog && git add CHANGELOG.md",
     "postpublish": "git push origin master --follow-tags",
-    "codecov": "codecov --token=$CODECOV_TOKEN"
+    "sendcodecov": "codecov --token=$CODECOV_TOKEN"
   },
   "lint-changed": {
     "*.js": [
