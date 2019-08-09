@@ -17,7 +17,7 @@ import { useLeaflet } from "react-leaflet"
  *   return (
  *	     <... onClick={() => map.fitBounds(turf.bbox(props.activeShape))}>
  *        ...
- *     </...>
+ *      </...>
  *    )
  * }
  *
