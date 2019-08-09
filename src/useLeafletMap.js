@@ -10,15 +10,15 @@ import { useLeaflet } from "react-leaflet"
  * ```javascript
  * import React from "react"
  * import { Map } from "react-leaflet"
- * import { useLeafletMap } from "use-leaflet-context"
+ * import { useLeafletMap } from "use-leaflet"
  *
  * const MyLeafletComponent = (props) => {
  *   const map = useLeafletMap()
  *   return (
- *	     <... onClick={() => map.fitBounds(turf.bbox(props.activeShape))}>
- *        ...
- *      </...>
- *    )
+ *     <... onClick={() => map.fitBounds(turf.bbox(props.activeShape))}>
+ *       ...
+ *     </...>
+ *   )
  * }
  *
  * const App = () => (
