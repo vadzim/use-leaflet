@@ -6,7 +6,7 @@
 
 Some hooks for using with [react-leaflet](https://www.npmjs.com/package/react-leaflet).
 
-Example of usage: https://codesandbox.io/embed/use-leaflet-jbftf
+Example of usage: <https://codesandbox.io/embed/use-leaflet-jbftf>
 
 Installation: `npm i use-leaflet`
 
