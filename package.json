@@ -1,6 +1,6 @@
 {
   "name": "use-leaflet",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "description": "useLeaflet hook for react-leaflet",
   "license": "MIT",
   "repository": "vadzim/use-leaflet",
