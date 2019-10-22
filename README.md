@@ -20,6 +20,8 @@ Installation: `npm i use-leaflet`
 -   [useLeafletMap](#useleafletmap)
 -   [useLeafletCenter](#useleafletcenter)
 -   [useLeafletBounds](#useleafletbounds)
+-   [useLeafletIsMoving](#useleafletismoving)
+-   [useLeafletIsZooming](#useleafletiszooming)
 -   [Map](#map)
 
 ### useLeafletZoom
@@ -91,6 +93,32 @@ const MyComponent = () => {
 ```
 
 Returns **\[\[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)], \[[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]]** \[[south, west], [north, east]] for visible area.
+
+### useLeafletIsMoving
+
+React hook to see if a user is moving the [react-leaflet map](https://react-leaflet.js.org/).
+
+```javascript
+const MyComponent = () => {
+  const isMoving = useLeafletIsMoving()
+  return ...
+}
+```
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if a user is moving the map.
+
+### useLeafletIsZooming
+
+React hook to see if a user is zooming the [react-leaflet map](https://react-leaflet.js.org/).
+
+```javascript
+const MyComponent = () => {
+  const isZooming = useLeafletIsZooming()
+  return ...
+}
+```
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if a user is zooming the map.
 
 ### Map
 
