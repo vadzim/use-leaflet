@@ -1,2 +1,2 @@
 
-- added [useLeafletIsMoving](../../..#useleafletismoving) & [useLeafletIsZooming](../../..#useleafletiszooming) hooks.
+- added [useLeafletIsMoving](../..#useleafletismoving) & [useLeafletIsZooming](../..#useleafletiszooming) hooks.
