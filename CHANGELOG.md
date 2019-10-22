@@ -1,4 +1,4 @@
 
-##1.5.0
+## 1.5.0
 
 - added [useLeafletIsMoving](README.md#useleafletismoving) & [useLeafletIsZooming](README.md#useleafletiszooming) hooks.
