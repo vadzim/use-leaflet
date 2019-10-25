@@ -1,4 +1,6 @@
 
+## 1.5.1
+
 - fix unsubscribing from events in useLeafletIsMoving & useLeafletIsZooming implementation.
 
 ## 1.5.0
