@@ -22,8 +22,8 @@ export const useLeafletInput = (inputStartEvent: string, inputStopEvent: string,
 		return () => {
 			effectMounted = false
 			if (map) {
-				map.on(inputStartEvent, handleStart)
-				map.on(inputStopEvent, handleEnd)
+				map.off(inputStartEvent, handleStart)
+				map.off(inputStopEvent, handleEnd)
 			}
 		}
 	}, [inputStartEvent, inputStopEvent, map])
