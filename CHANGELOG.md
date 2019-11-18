@@ -1,4 +1,6 @@
 
+- added typescript typings
+
 ## 1.5.1
 
 - fix unsubscribing from events in useLeafletIsMoving & useLeafletIsZooming implementation.

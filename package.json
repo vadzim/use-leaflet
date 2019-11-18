@@ -5,6 +5,7 @@
   "license": "MIT",
   "repository": "vadzim/use-leaflet",
   "main": "dist/index.js",
+  "types": "src/index.d.ts",
   "author": {
     "name": "Vadzim Zieńka",
     "email": "v@vadzim.info",
@@ -58,6 +59,7 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.6.3",
+    "@types/leaflet": "^1.5.5",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "codecov": "^3.6.1",
