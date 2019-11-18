@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/vadzim/use-leaflet/master.svg?style=flat-square)](https://travis-ci.org/vadzim/use-leaflet)
 [![Coverage Status](https://img.shields.io/codecov/c/github/vadzim/use-leaflet/master.svg?style=flat-square)](https://codecov.io/gh/vadzim/use-leaflet/branch/master)
 
-Some hooks for using with [react-leaflet](https://www.npmjs.com/package/react-leaflet).
+Hooks for using with [react-leaflet](https://www.npmjs.com/package/react-leaflet).
 
 Example of usage: <https://codesandbox.io/embed/use-leaflet-jbftf>
 
