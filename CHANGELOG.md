@@ -1,4 +1,6 @@
 
+## 1.6.0
+
 - added typescript typings
 
 ## 1.5.1
