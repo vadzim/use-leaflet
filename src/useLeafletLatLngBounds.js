@@ -1,6 +1,6 @@
 // @flow
-import { useLeafletData } from "./onLeafletEvent"
 import type { LatLngBounds } from "leaflet"
+import { useLeafletData } from "./onLeafletEvent"
 
 /**
  * React hook for getting current latlng bounds of visible area of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
