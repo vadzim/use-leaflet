@@ -22,6 +22,7 @@ Installation: `npm i use-leaflet`
 -   [useLeafletBounds](#useleafletbounds)
 -   [useLeafletIsMoving](#useleafletismoving)
 -   [useLeafletIsZooming](#useleafletiszooming)
+-   [useLeafletLatLngBounds](#useleafletlatlngbounds)
 -   [Map](#map)
 
 ### useLeafletZoom
@@ -119,6 +120,20 @@ const MyComponent = () => {
 ```
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if a user is zooming the map.
+
+### useLeafletLatLngBounds
+
+React hook for getting current latlng bounds of visible area of react-leaflet [Map](https://react-leaflet.js.org/docs/en/components.html#map).
+This hook is different from useLeafletBounds because it returns the Leaflet LatLngBounds object
+
+```javascript
+const MyComponent = () => {
+  const latLngBounds = useLeafletBounds()
+  return ...
+}
+```
+
+Returns **(LatLngBounds | null)** LatLngBounds for visible area.
 
 ### Map
 
