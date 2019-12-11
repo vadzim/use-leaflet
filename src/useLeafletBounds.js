@@ -17,7 +17,14 @@ import { useLeafletData } from "./onLeafletEvent"
 export const useLeafletBounds = (): [[number, number], [number, number]] => useLeafletData(getMapBounds, "moveend")
 
 const getMapBounds = map => {
-	if (!map) return [[Infinity, Infinity], [-Infinity, -Infinity]]
+	if (!map)
+		return [
+			[Infinity, Infinity],
+			[-Infinity, -Infinity],
+		]
 	const bounds = map.getBounds()
-	return [[bounds.getSouth(), bounds.getWest()], [bounds.getNorth(), bounds.getEast()]]
+	return [
+		[bounds.getSouth(), bounds.getWest()],
+		[bounds.getNorth(), bounds.getEast()],
+	]
 }
